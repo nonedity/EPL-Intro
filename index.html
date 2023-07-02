@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailer</title>
+</head>
+
+<style>
+    *, html, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #introEpl {
+        min-width: 100%;
+        min-height: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+    .intro {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 20px;
+        font-family: fantasy;
+    }
+    #btn {
+        width: 200px;
+        padding: 12px;
+        margin-top: 10px;
+        border: none;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <video autoplay muted loop id="introEpl">
+        <source src="Premier League Intro - Trim.mp4" type="video/mp4">
+    </video>
+    <div class="intro">
+        <center>
+            <img src="EPL Logo.png" alt="epl logo" width="80" height="80">
+            <p>Saya sungguh sangat-sangat suka English Premier League</p>
+            <button id="btn" onclick="triggerButton()">Pause</button>
+        </center>
+    </div>
+
+    <script>
+        const introEpl = document.getElementById("introEpl")
+        const btn = document.getElementById("btn")
+
+        function triggerButton() {
+            if(introEpl.paused) {
+                introEpl.play()
+                btn.innerHTML = "Pause"
+            }else {
+                introEpl.pause();
+                btn.innerHTML = "Play"
+            }
+        }
+    </script>
+</body>
+
+</html>
